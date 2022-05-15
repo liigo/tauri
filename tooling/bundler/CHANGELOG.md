@@ -1,5 +1,16 @@
 # Changelog
 
+## \[1.0.0-rc.7]
+
+- Fixes processing of resources with glob patterns when there are nested directories on Windows.
+  - [3e702cf8](https://www.github.com/tauri-apps/tauri/commit/3e702cf8b15762cdca43c8d7ff6f6e8ee9670244) fix(bundler): ignore duplicated files in resource iter, closes [#4126](https://www.github.com/tauri-apps/tauri/pull/4126) ([#4129](https://www.github.com/tauri-apps/tauri/pull/4129)) on 2022-05-15
+- Fixes resource bundling on Windows when the resource path includes root or parent directory components.
+  - [787ea09a](https://www.github.com/tauri-apps/tauri/commit/787ea09adc40644b89926e2b629261065141d16c) fix: generate windows resource directories using resource_relpath, closes [#4087](https://www.github.com/tauri-apps/tauri/pull/4087). ([#4111](https://www.github.com/tauri-apps/tauri/pull/4111)) on 2022-05-13
+- Change the MSI reinstall mode so it only reinstall missing or different version files.
+  - [1948ae53](https://www.github.com/tauri-apps/tauri/commit/1948ae53fdcd0ef99ef302066792d779a62c5065) fix(bundler): only reinstall missing or != version files, closes [#4122](https://www.github.com/tauri-apps/tauri/pull/4122) ([#4125](https://www.github.com/tauri-apps/tauri/pull/4125)) on 2022-05-15
+- Allow configuring the display options for the MSI execution allowing quieter updates.
+  - [9f2c3413](https://www.github.com/tauri-apps/tauri/commit/9f2c34131952ea83c3f8e383bc3cec7e1450429f) feat(core): configure msiexec display options, closes [#3951](https://www.github.com/tauri-apps/tauri/pull/3951) ([#4061](https://www.github.com/tauri-apps/tauri/pull/4061)) on 2022-05-15
+
 ## \[1.0.0-rc.6]
 
 - Remove `Settings::verbose` option. You may now bring your own `log` frontend to receive logging output from the bundler while remaining in control of verbosity and formatting.
